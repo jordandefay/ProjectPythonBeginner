@@ -5,7 +5,7 @@ import schedule
 import time
 
 # Chemin vers votre dépôt local
-REPO_PATH = '/Users/jordandefay/Documents/school-test'
+REPO_PATH = '/Users/votre-nom-utilisateur/Documents/votre-depot'
 
 def commit_changes():
     try:
