@@ -4,6 +4,8 @@ import git
 import schedule
 import time
 
+# CECI EST UN SCRIPT OPEN SOURCE REDIGE PAR CHAMALHAT
+
 # Chemin vers votre dépôt local
 REPO_PATH = '/Users/votre-nom-utilisateur/Documents/votre-depot'
 
@@ -12,7 +14,7 @@ def commit_changes():
         # Ouvrir le dépôt
         repo = git.Repo(REPO_PATH)
 
-        # Vérifier s'il y a des modifications
+        # Vérifier s'il y a des modifications (s'il n'y en a pas, il n'y aura aucun commit)
         if repo.is_dirty(untracked_files=True):
             # Ajouter tous les fichiers modifiés
             repo.git.add(A=True)
@@ -31,8 +33,8 @@ def commit_changes():
     except Exception as e:
         print(f'Erreur lors du commit : {e}')
 
-# Planifier le commit quotidien à minuit
-schedule.every().day.at('23:59').do(commit_changes)
+# Planifier le commit quotidien à minuit (à modifier selon besoin ou ajouter d'autres horaires)
+schedule.every().day.at('00:00').do(commit_changes)
 
 print('Script de commit automatique démarré.')
 
